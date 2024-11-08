@@ -179,6 +179,8 @@ public class NewAppointments_component extends javax.swing.JPanel {
         
         // Here we do a number of different data validations
 
+        // Maximum name length is 30
+
         String patientName = patientNameTB.getText().trim();
         if (!isValidName(patientName)) {
             JOptionPane.showMessageDialog(this, "Patient name should contain only letters and spaces, and be " + maxNameLength + " characters or less.", "Invalid Name", JOptionPane.WARNING_MESSAGE);
@@ -187,7 +189,9 @@ public class NewAppointments_component extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Patient name must be " + maxNameLength + " characters or less.", "Invalid Name", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
+
+        // The age gap accepted is from 9 to 130
+        // Also here we have a try catch to prevent user from entering invalid data types
         
         String patientAge = patientAgeTB.getText().trim();
         int age;
