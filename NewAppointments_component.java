@@ -230,6 +230,8 @@ public class NewAppointments_component extends javax.swing.JPanel {
         Date selectedDate = dateChooser.getDate();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String formattedDate = dateFormat.format(selectedDate);
+
+        // Prevent sslecting a past date to ensure validity
         
         if (!isDateValid(selectedDate)) {
             JOptionPane.showMessageDialog(this, "Please select a present or future date.", "Invalid Date", JOptionPane.WARNING_MESSAGE);
@@ -275,6 +277,8 @@ public class NewAppointments_component extends javax.swing.JPanel {
 
             Appointment newAppointment = new Appointment(selectedDoctor_txt, newPatient, selectedTreatment_txt, dayOfWeek_txt, appointmentTimeSlot, false, formattedDate, registrationPaid);
 
+            // This time slot validation is only to ensure a strong filter or user won't get a change to select an already selected date
+            
             if (selectedDoctor_txt.bookSlot(formattedDate, appointmentTimeSlot)) {
                 
                 // Creating the appointment after a strong validation
