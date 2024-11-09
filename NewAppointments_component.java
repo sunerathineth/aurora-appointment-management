@@ -225,6 +225,9 @@ public class NewAppointments_component extends javax.swing.JPanel {
         
         String selectedDoctorName = (String) doctorTypeCB.getSelectedItem();
         int registrationAccepted = registrationCB.getSelectedIndex();
+
+        // Accept registration fees. Check whether the registration is made or not
+        
         registrationPaid = registrationAccepted != 0;
 
         Date selectedDate = dateChooser.getDate();
