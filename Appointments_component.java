@@ -1028,7 +1028,8 @@ public class Appointments_component extends javax.swing.JPanel {
                 
                 appointmentToComplete.generateInvoice();
             } else {
-                int response = JOptionPane.showConfirmDialog(Appointments_component.this, "Did the patient receive treatment?\nComplete " + appointmentDisposal_ID + " ?", "Complete Appointment", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                int response = JOptionPane.showConfirmDialog(Appointments_component.this, "Did the patient receive treatment?\nComplete " + appointmentDisposal_ID + " ?", "Complete Appointment",
+                                                             JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
                 if (response == JOptionPane.YES_OPTION) {
                     appointmentToComplete.completeAppointment();
